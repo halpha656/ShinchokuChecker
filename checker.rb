@@ -36,7 +36,7 @@ loop do
     if t.hour != t_hour_old
     
         logfile = File::open(logfname, "a+")
-        fsize = File.size(texfname)
+        fsize = File.size(inputname)
         if fsize > fsize_old
             puts "#{t}: #{fsize} bytes (+ #{fsize-fsize_old})"
             client.update("#{t}: #{fsize} bytes (+ #{fsize-fsize_old})")
